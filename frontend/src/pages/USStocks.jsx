@@ -9,6 +9,7 @@ const USStocks = () => {
     const [marketData, setMarketData] = useState(null);
     const [account, setAccount] = useState(null);
     const [amount, setAmount] = useState('');
+    const [assetType, setAssetType] = useState('stock');
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
@@ -44,9 +45,10 @@ const USStocks = () => {
             await api.executeUSStockTrade({
                 symbol,
                 action,
-                amount_usd: parseFloat(amount)
+                amount_usd: parseFloat(amount),
+                asset_type: assetType
             });
-            alert(`${action.toUpperCase()} order submitted!`);
+            alert(`${action.toUpperCase()} order submitted for ${assetType.toUpperCase()}!`);
             fetchData();
         } catch (error) {
             alert('Trade failed: ' + error.message);
@@ -60,7 +62,7 @@ const USStocks = () => {
             <header style={{ marginBottom: '30px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div>
                     <h1 style={{ fontSize: '2rem', marginBottom: '10px' }}>US Stocks</h1>
-                    <p style={{ color: 'var(--text-secondary)' }}>Trade equities with zero commission (Mock Mode)</p>
+                    <p style={{ color: 'var(--text-secondary)' }}>Trade equities, ETFs, options, and futures (Mock Mode)</p>
                 </div>
                 <div className="glass-panel" style={{ padding: '10px 20px', display: 'flex', gap: '20px' }}>
                     <div>
@@ -125,6 +127,43 @@ const USStocks = () => {
                         )}
                     </div>
                 </div>
+
+                {/* Trading Panel */}
+                <div className="glass-panel card">
+                    <h3 style={{ marginBottom: '20px' }}>Trade {symbol}</h3>
+
+                    <div style={{ marginBottom: '20px' }}>
+                        <label style={{ display: 'block', color: 'var(--text-secondary)', marginBottom: '8px' }}>Asset Type</label>
+                        <select
+                            value={assetType}
+                            onChange={(e) => setAssetType(e.target.value)}
+                            style={{
+                                width: '100%',
+                                background: 'var(--bg-primary)',
+                                border: '1px solid var(--glass-border)',
+                                padding: '12px',
+                                borderRadius: '8px',
+                                color: 'white',
+                                fontSize: '1rem',
+                                outline: 'none',
+                                cursor: 'pointer'
+                            }}
+                        >
+                            <option value="stock">Stock</option>
+                            <option value="etf">ETF</option>
+                            <option value="option">Option</option>
+                            <option value="future">Future</option>
+                        </select>
+                    </div>
+
+                    <div style={{ marginBottom: '20px' }}>
+                        <label style={{ display: 'block', color: 'var(--text-secondary)', marginBottom: '8px' }}>Amount (USD)</label>
+                        <div style={{ position: 'relative' }}>
+                            <DollarSign size={16} style={{ position: 'absolute', left: '10px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-secondary)' }} />
+                            <input
+                                type="number"
+                                value={amount}
+                                onChange={(e) => setAmount(e.target.value)}
                                 placeholder="0.00"
                                 style={{
                                     width: '100%',
@@ -177,9 +216,9 @@ const USStocks = () => {
                             ))}
                         </div>
                     </div>
-                </div >
-            </div >
-        </div >
+                </div>
+            </div>
+        </div>
     );
 };
 
