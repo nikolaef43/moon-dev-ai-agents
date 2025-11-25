@@ -18,12 +18,12 @@ class USStockHandler:
         self.base_url = os.getenv("ALPACA_BASE_URL", "https://paper-api.alpaca.markets")
         
         if not self.api_key or not self.secret_key:
-            cprint("⚠️ Alpaca API keys not found. US Stock trading will be in MOCK mode.", "yellow")
+            print("[WARNING] Alpaca API keys not found. US Stock trading will be in MOCK mode.")
             self.mock_mode = True
         else:
             self.mock_mode = False
             # self.api = tradeapi.REST(self.api_key, self.secret_key, self.base_url, api_version='v2')
-            cprint("✅ Alpaca API connected!", "green")
+            print("[SUCCESS] Alpaca API connected!")
 
     def get_account(self):
         """Get account details"""
@@ -52,7 +52,7 @@ class USStockHandler:
 
     def get_bars(self, symbol, timeframe='1H', limit=100):
         """Get historical bars"""
-        cprint(f"📊 Fetching {timeframe} bars for {symbol}...", "cyan")
+        print(f"[INFO] Fetching {timeframe} bars for {symbol}...")
         if self.mock_mode:
             # Generate mock data
             dates = pd.date_range(end=pd.Timestamp.now(), periods=limit, freq=timeframe)
@@ -70,7 +70,7 @@ class USStockHandler:
 
     def submit_order(self, symbol, qty, side, type='market', time_in_force='gtc'):
         """Submit an order"""
-        cprint(f"🚀 Submitting {side} order for {qty} {symbol}...", "green")
+        print(f"[ORDER] Submitting {side} order for {qty} {symbol}...")
         if self.mock_mode:
             return {"id": "mock_order_id", "status": "filled"}
         

@@ -18,7 +18,7 @@ const Sidebar = () => {
         <div style={{ background: 'var(--accent-gradient)', padding: '8px', borderRadius: '8px' }}>
           <Activity color="white" size={24} />
         </div>
-        <h2 className="text-gradient" style={{ margin: 0, fontSize: '1.5rem' }}>Moon Dev</h2>
+        <h2 className="text-gradient" style={{ margin: 0, fontSize: '1.5rem' }}>VortigenOS</h2>
       </div>
 
       <nav style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
@@ -26,7 +26,7 @@ const Sidebar = () => {
           <NavLink
             key={item.path}
             to={item.path}
-            className={({ isActive }) => 
+            className={({ isActive }) =>
               isActive ? 'nav-item active' : 'nav-item'
             }
             style={({ isActive }) => ({

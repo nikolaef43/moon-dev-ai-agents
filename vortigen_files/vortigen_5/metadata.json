@@ -1,0 +1,7 @@
+{
+  "name": "VORTIGEN",
+  "description": "An institutional-grade, multi-agent AI trading command center. This interface provides a 'God Mode' view for commanding and monitoring AI agents, portfolio performance, and risk metrics in a real-time, simulated environment.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}

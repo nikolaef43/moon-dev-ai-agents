@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VORTIGEN</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            keyframes: {
+              'pulse-glow': {
+                '0%, 100%': { boxShadow: '0 0 0 0 rgba(22, 211, 238, 0.4)' },
+                '50%': { boxShadow: '0 0 10px 5px rgba(22, 211, 238, 0)' },
+              },
+              'orb-glow': {
+                '0%, 100%': { transform: 'scale(1)', boxShadow: '0 0 10px rgba(45, 212, 191, 0.3)' },
+                '50%': { transform: 'scale(1.05)', boxShadow: '0 0 25px rgba(45, 212, 191, 0.5)' },
+              },
+              'voice-wave': {
+                '0%, 100%': { transform: 'scaleY(0.4)' },
+                '25%': { transform: 'scaleY(1)' },
+                '50%': { transform: 'scaleY(0.6)' },
+                '75%': { transform: 'scaleY(0.8)' },
+              },
+              'skeleton-pulse': {
+                '50%': { opacity: '.5' },
+              },
+              'background-shine': {
+                'from': { backgroundPosition: '200% 0' },
+                'to': { backgroundPosition: '-200% 0' },
+              },
+              'fade-in-down': {
+                  '0%': { opacity: '0', transform: 'translateY(-10px)' },
+                  '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              'spin-3d': {
+                'from': { transform: 'rotateY(0deg) rotateX(10deg)' },
+                'to': { transform: 'rotateY(360deg) rotateX(10deg)' },
+              },
+               'manifold-spin': {
+                'from': { transform: 'rotateX(0deg) rotateY(0deg) rotateZ(0deg)' },
+                'to': { transform: 'rotateX(360deg) rotateY(360deg) rotateZ(360deg)' },
+              },
+            },
+            animation: {
+              'pulse-glow': 'pulse-glow 2s infinite',
+              'orb-glow': 'orb-glow 2.5s ease-in-out infinite',
+              'voice-wave': 'voice-wave 1.5s ease-in-out infinite',
+              'skeleton-pulse': 'skeleton-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'background-shine': 'background-shine 3s linear infinite',
+              'fade-in-down': 'fade-in-down 0.5s ease-out forwards',
+              'spin-3d': 'spin-3d 45s linear infinite',
+              'manifold-spin': 'manifold-spin 20s linear infinite alternate',
+            },
+          }
+        }
+      }
+    </script>
+    <link rel="stylesheet" href="/index.css" />
+    <style type="text/tailwindcss">
+      @layer base {
+        body {
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+      }
+    </style>
+    <style>
+      @media print {
+        .no-print {
+          display: none !important;
+        }
+        main {
+          padding: 0 !important;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@19.0.0-rc-f994737d14-20240522",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0-rc-f994737d14-20240522/client",
+    "lucide-react": "https://esm.sh/lucide-react@0.400.0",
+    "@google/genai": "https://esm.sh/@google/genai@0.14.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-950">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

@@ -1,17 +1,16 @@
-
 @echo off
-echo 🌙 Moon Dev AI Console - Startup Script 🚀
+echo 🌙 VortigenOS - Startup Script 🚀
 echo ==========================================
 
 echo [1/2] Starting Backend Server...
-start "Moon Dev Backend" cmd /k "python src/server.py"
+start "VortigenOS Backend" cmd /k "python src/super_app.py"
 
 echo [2/2] Starting Frontend...
 cd frontend
-start "Moon Dev Frontend" cmd /k "npm run dev"
+start "VortigenOS Frontend" cmd /k "npm run dev"
 
 echo.
-echo ✅ System starting up!
+echo ✅ VortigenOS starting up!
 echo 🌍 Frontend will be available at: http://localhost:5173
 echo 🔌 Backend API is running at: http://localhost:8000
 echo.

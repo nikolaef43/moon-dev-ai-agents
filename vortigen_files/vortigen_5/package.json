@@ -1,0 +1,21 @@
+{
+  "name": "vortigen",
+  "version": "1.0.0",
+  "private": true,
+  "description": "An institutional-grade, multi-agent AI trading command center.",
+  "scripts": {
+    "start": "echo 'Starting a simple server. Run `python3 -m http.server` in your terminal and open http://localhost:8000' && exit 1"
+  },
+  "dependencies": {
+    "@google/genai": "^1.25.0",
+    "lucide-react": "^0.545.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.4.5"
+  }
+}

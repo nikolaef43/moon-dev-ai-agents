@@ -1,0 +1,29 @@
+# Core Web Framework
+fastapi
+uvicorn
+
+# Data & Analysis
+yfinance
+pandas
+numpy
+scikit-learn
+pandas-ta
+
+# Backtesting
+backtesting
+
+# Logging & Configuration
+structlog
+python-dotenv
+
+# Database
+aiosqlite
+
+# Validation
+pydantic
+
+# Monitoring
+prometheus-client
+
+# Visualization (Optional, for scripts)
+plotly

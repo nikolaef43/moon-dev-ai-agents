@@ -1,0 +1,7 @@
+{
+  "name": "VortigenOS AI Console",
+  "description": "An AI-powered console for a mock institutional trading system. It allows users to query market data and strategies using different AI modes: a fast, low-latency mode; a deep-thinking mode for complex analysis; and a search-grounded mode for up-to-date information.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
