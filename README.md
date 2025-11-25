@@ -9,6 +9,31 @@ ai agents are clearly the future and the entire workforce will be replaced or at
 
 feel free to join [our discord](https://discord.gg/8UPuVZ53bh) if you beleive ai agents will be integrated into the workforce
 
+## 🌙 Moon Dev Local Console
+
+We've added a premium local web interface to manage your agents and trade!
+
+### 🚀 Quick Start
+1. **Run the App**: Double-click `start_app.bat` in the root directory.
+2. **Access Console**: Open your browser to `http://localhost:5173`.
+
+### ✨ Features
+- **Dashboard**: Real-time portfolio overview.
+- **US Stocks**: Trade Stocks, ETFs, Options, and Futures (Mock/Paper mode supported).
+- **Agents**: Monitor and control your AI agents (Trading, Polymarket, Sentiment).
+- **Premium UI**: Dark mode, glassmorphism design.
+
+### 🔧 Setup
+If this is your first time running:
+1. Install Python dependencies: `pip install -r requirements.txt`
+2. Install Frontend dependencies:
+   ```bash
+   cd frontend
+   npm install
+   ```
+
+---
+
 ## Video Updates & Training
 
 ⭐️ [first full concise documentation video (watch here)](https://youtu.be/RlqzkSgDKDc)
