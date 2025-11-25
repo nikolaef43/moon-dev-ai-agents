@@ -4,19 +4,32 @@ Built with love by Moon Dev 🚀
 
 disclaimer: this is not financial advice and there is no guarantee of any kind. use at your own risk.
 
-Quick Start Guide:
------------------
-1. Install required packages:
-   ```
-   pip install requests pandas python-dotenv
+## 🌙 Moon Dev Local Console
+
+We've added a premium local web interface to manage your agents and trade!
+
+### 🚀 Quick Start
+1. **Run the App**: Double-click `start_app.bat` in the root directory.
+2. **Access Console**: Open your browser to `http://localhost:5173`.
+
+### ✨ Features
+- **Dashboard**: Real-time portfolio overview.
+- **US Stocks**: Trade Stocks, ETFs, Options, and Futures (Mock/Paper mode supported).
+- **Agents**: Monitor and control your AI agents (Trading, Polymarket, Sentiment).
+- **Premium UI**: Dark mode, glassmorphism design.
+
+### 🔧 Setup
+If this is your first time running:
+1. Install Python dependencies: `pip install -r requirements.txt`
+2. Install Frontend dependencies:
+   ```bash
+   cd frontend
+   npm install
    ```
 
-2. Create a .env file in your project root:
-   ```
-   MOONDEV_API_KEY=your_api_key_here
-   ```
+---
 
-3. Basic Usage:
+## Quick Start Guide (Legacy CLI)
    ```python
    from agents.api import MoonDevAPI
 
